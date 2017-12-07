@@ -1,0 +1,59 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Mathematical equations
+    %script{:src => "/assets/javascripts/libs/jquery-3.1.0.min.js", :type => "text/javascript"}
+    %script{:src => "https://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.min.js"}
+    %script{:src => "https://cdn.jsdelivr.net/jquery.validation/1.15.0/additional-methods.min.js"}
+    %link{:href => "/assets/stylesheets/bootstrap.min.css", :rel => "stylesheet"}/
+  %body
+    %nav.navbar.navbar-default.navbar-fixed-top
+      .container-fluid
+        #navbar.collapse.navbar-collapse
+          %ul.nav.navbar-nav
+            %li.active
+              %a{:href => "/"} Calculate
+
+    %form#form_select{:style => "margin-left: 50px; margin-top: 80px;"}
+      %h3 Please, select type of mathematical equation and put coefficients:
+      %input#linear{:name => "select", :type => "radio", :value => "1"}/
+      Linear
+      %p
+      %input#quadratic{:name => "select", :type => "radio", :value => "0"}/
+      Quadratic
+
+    %form#form_linear{:style => "margin-left: 50px;"}
+      %h4
+      %input#fieldfirstlin.left{name: "first_coeflin", maxlength: "10", size: 5}/
+      x+
+      %input#fieldsecondlin.left{name: "second_coeflin", maxlength: "10", size: 5}/
+      \= 0
+      %br/
+      %br/
+      %button.btn.btn-primary{:type => "submit"}
+        Calculate
+      %br/
+      %br/
+      %input#fieldanswerqua.left{:style => "border: none;", name: "answer_for_linear", maxlength: "25", size: 15, value: ""}/
+
+
+    %form#form_quadratic{:style => "margin-left: 50px;"}
+      %h4
+      %input#fieldfirstqua.left{name: "first_coefqua", maxlength: "10", size: 5}/
+      x
+      %sup> 2
+      +
+      %input#fieldsecondqua.left{name: "second_coefqua", maxlength: "10", size: 5}/
+      x+
+      %input#fieldthirdqua.left{name: "third_coefqua", maxlength: "10", size: 5}/
+      \= 0
+      %br/
+      %br/
+      %button.btn.btn-primary{:type => "submit"}
+        Calculate
+      %br/
+      %br/
+      %input#fieldanswerqua.left{:style => "border: none;", name: "answer_for_quadratic", maxlength: "25", size: 25, value: ""}/
+
+  %script{:src => "/assets/javascripts/script.js"}
