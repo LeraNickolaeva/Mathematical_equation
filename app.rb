@@ -2,6 +2,7 @@ require 'rubygems'
 require 'sinatra'
 require 'sinatra/json'
 require 'haml'
+require 'pry'
 
 require './lib/equation'
 require './lib/linear_equation'

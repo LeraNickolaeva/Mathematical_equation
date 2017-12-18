@@ -1,12 +1,6 @@
 class QuadraticEquation < Equation
 
-  def initialize(first_coef, second_coef, third_coef)
-    @first_coef = first_coef
-    @second_coef = second_coef
-    @third_coef = third_coef
-  end
-
-  def output_q
+  def solve
     return 'Error' if discriminant < 0
     return "#{one_coef}" if discriminant.zero?
     "#{two_coefs}"
@@ -15,14 +9,14 @@ class QuadraticEquation < Equation
   private
 
   def one_coef
-    (-@second_coef / (2 * @first_coef))
+    (-params[:secondqua].to_f / (2 * params[:firstqua].to_f))
   end
 
   def two_coefs
-    [-@second_coef + Math.sqrt(discriminant), -@second_coef - Math.sqrt(discriminant)].map { |item| item / (2 * @first_coef) }
+    [-params[:secondqua].to_f + Math.sqrt(discriminant), -params[:secondqua].to_f - Math.sqrt(discriminant)].map { |item| item / (2 * params[:firstqua].to_f) }
   end
 
   def discriminant
-    @discriminant ||= @second_coef**2 - 4 * @first_coef * @third_coef
+    @discriminant ||= params[:secondqua].to_f**2 - 4 * params[:firstqua].to_f * params[:thirdqua].to_f
   end
 end

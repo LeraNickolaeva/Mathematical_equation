@@ -1,13 +1,8 @@
 class LinearEquation < Equation
-	
-  def initialize(first_coef, second_coef)
-    @first_coef = first_coef
-    @second_coef = second_coef
-  end
 
-  def output_l
-    return 'Error' if @first_coef.zero?
-    @answer = -@second_coef / @first_coef
+  def self.solve
+    return 'Error' if params[:firstlin].to_f.zero?
+    @answer = -params[:secondlin].to_f / params[:firstlin].to_f
     "#{@answer}"
   end
 end
