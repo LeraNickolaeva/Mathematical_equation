@@ -10,7 +10,7 @@ require './lib/quadratic_equation'
 
 set :public_folder, 'public'
 
-# Logic for protecting only certain URLs in the application
+# Logic for protecting certain URLs in the application
 # helpers do
 #   def protected!
 #     return if authorized?

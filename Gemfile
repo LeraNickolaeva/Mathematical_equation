@@ -9,4 +9,6 @@ gem 'pry'
 group :test do
   gem 'rspec'
   gem 'capybara'
+  gem 'cucumber'
+  gem 'cucumber-rails'
 end
